@@ -109,4 +109,4 @@ Risc uC <br>
     ***dd if=/home/root/awboot-boot-sd.bin of=/dev/sdd bs=1024 seek=8*** <br>
 
 **Note:** <br>
-Awboot taken from git@github.com:szemzoa/awboot.git. Many thanks for the Author for help. <br>
+  Awboot taken from git@github.com:szemzoa/awboot.git. Many thanks for the Author for help. <br>
