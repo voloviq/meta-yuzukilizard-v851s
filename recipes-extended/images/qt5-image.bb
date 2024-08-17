@@ -81,7 +81,6 @@ UTILITIES_INSTALL = " \
     os-release \
     lsb-release \
     usbutils \
-    libusbgx \
     libgpiod \
     libgpiod-tools \
     libgpiod-dev \
