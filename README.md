@@ -104,9 +104,9 @@ Risc uC <br>
 
 9. When it is necessary to modify and test new AWBoot application the raw image can be write using
 
-  ***scp awboot-boot-sd.bin root@192.168.10.1:/home/root*** <br>
+    ***scp awboot-boot-sd.bin root@192.168.10.1:/home/root*** <br>
 
-  ***dd if=/home/root/awboot-boot-sd.bin of=/dev/sdd bs=1024 seek=8*** <br>
+    ***dd if=/home/root/awboot-boot-sd.bin of=/dev/sdd bs=1024 seek=8*** <br>
 
 **Note:** <br>
 Awboot taken from git@github.com:szemzoa/awboot.git. Many thanks for the Author for help. <br>
