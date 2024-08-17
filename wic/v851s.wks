@@ -1,0 +1,6 @@
+# short-description: Create SD card image for Yuzuki-Lizard (V851s) board
+# long-description: Creates a partitioned SD card image for Yuzuki-Lizard (V851S) board
+# Boot files are located in the first vfat partition.
+include v851s-boot.wks
+
+part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label root --align 4 --use-uuid

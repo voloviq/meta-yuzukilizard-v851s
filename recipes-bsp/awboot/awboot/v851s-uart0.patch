@@ -1,0 +1,93 @@
+diff --git a/.build_revision b/.build_revision
+index 0056290..9163b73 100644
+--- a/.build_revision
++++ b/.build_revision
+@@ -1 +1 @@
+-6744
++6776
+diff --git a/Makefile b/Makefile
+index 288c06e..17c11e0 100644
+--- a/Makefile
++++ b/Makefile
+@@ -3,7 +3,11 @@ TARGET := awboot
+ CROSS_COMPILE ?= arm-none-eabi
+ 
+ # Log level defaults to info
+-LOG_LEVEL ?= 40
++LOG_LEVEL = 40
++
++BOARD = yuzuki-lizard
++
++SOC = v851s
+ 
+ SRCS := main.c boards/board-$(BOARD).c
+ 
+diff --git a/boards/board-yuzuki-lizard.c b/boards/board-yuzuki-lizard.c
+index ed1bdfa..ca4602c 100644
+--- a/boards/board-yuzuki-lizard.c
++++ b/boards/board-yuzuki-lizard.c
+@@ -9,11 +9,11 @@
+ #include "sdmmc.h"
+ 
+ sunxi_usart_t usart_dbg = {
+-	.base	 = 0x02500800,
+-	.id		 = 2,
+-	.irqn	 = IRQn_UART2,
+-	.gpio_tx = {GPIO_PIN(PORTE, 12), GPIO_PERIPH_MUX6},
+-	.gpio_rx = {GPIO_PIN(PORTE, 13), GPIO_PERIPH_MUX6},
++	.base	 = 0x02500000,
++	.id		 = 0,
++	.irqn	 = IRQn_UART0,
++	.gpio_tx = {GPIO_PIN(PORTH, 9), GPIO_PERIPH_MUX5},
++	.gpio_rx = {GPIO_PIN(PORTH, 10), GPIO_PERIPH_MUX5},
+ };
+ 
+ sunxi_spi_t sunxi_spi0 = {
+diff --git a/boards/board-yuzuki-lizard.h b/boards/board-yuzuki-lizard.h
+index 8658d06..c735921 100644
+--- a/boards/board-yuzuki-lizard.h
++++ b/boards/board-yuzuki-lizard.h
+@@ -8,16 +8,16 @@
+ 
+ #define USART_DBG usart_dbg
+ 
+-#define CONFIG_BOOT_SPINAND
++//#define CONFIG_BOOT_SPINAND
+ #define CONFIG_BOOT_SDCARD
+-#define CONFIG_BOOT_MMC
++//#define CONFIG_BOOT_MMC
+ 
+ /* HEAP memory */
+ #define CONFIG_NUTHEAP_BASE (SDRAM_BASE + (2 * 1024 * 1024))
+ #define CONFIG_NUTHEAP_SIZE (8 * 1024 * 1024)
+ 
+ //#define CONFIG_ENABLE_CONSOLE
+-#define CONFIG_ENABLE_EXT2FS
++//#define CONFIG_ENABLE_EXT2FS
+ 
+ #define CONFIG_FATFS_CACHE_SIZE		 (CONFIG_DTB_LOAD_ADDR - SDRAM_BASE) // in bytes
+ #define CONFIG_SDMMC_SPEED_TEST_SIZE 1024 // (unit: 512B sectors)
+@@ -36,7 +36,7 @@
+ 
+ /* boot from MMC/SD */
+ #define CONFIG_CMD_LINE_ARGS \
+-	"mem=64M cma=4M root=/dev/mmcblk0p1 init=/sbin/init console=ttyS2,115200 console=/dev/tty0 rootwait"
++	"mem=64M cma=4M root=/dev/mmcblk0p2 init=/sbin/init console=ttyS0,115200 console=/dev/tty0 rootwait"
+ 
+ /* boot from spi nand UBIFS */
+ //#define CONFIG_CMD_LINE_ARGS "mem=64M cma=8M init=/sbin/init console=ttyS2,115200 rootfstype=ubifs ubi.mtd=3
+diff --git a/tools/Makefile b/tools/Makefile
+index 7462b7b..cd175f1 100644
+--- a/tools/Makefile
++++ b/tools/Makefile
+@@ -13,8 +13,8 @@ INCLUDES = -I includes -I ../lib
+ CFLAGS   = -O2 -std=gnu99 $(INCLUDES)
+ CXXFLAGS = -O2 -std=gnu++11 $(INCLUDES)
+ 
+-CC  ?= gcc
+-CXX ?= g++
++CC  = gcc
++CXX = g++
+ 
+ all: tools
+ tools: $(BUILD_DIR) $(MKSUNXI)
