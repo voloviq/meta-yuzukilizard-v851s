@@ -1,6 +1,6 @@
 # meta-yuzukilizard-v851s
 
-## Instruction how to build an image for Yazuki  in Yocto
+## Instruction how to build an image for Yuzuki  in Yocto
 
 ### Products:
 
