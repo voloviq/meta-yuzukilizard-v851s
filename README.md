@@ -12,6 +12,7 @@ Assumed that Linux Ubuntu is installed
 
 ## List of tested elements
 
+Nothing were tested due to Kernel not start!
 
 ## List of not tested elements
 
