@@ -30,14 +30,14 @@ index 000000000000..672e428aac3d
 +	compatible = "allwinner,sun8i-v851s", "allwinner,sun8i";
 +
 +	aliases {
-+		serial0 = &uart0;
-+/*		serial2 = &uart2; */
++/*		serial0 = &uart0; */
++		serial2 = &uart2;
 +	};
 +
 +		chosen {
-+				stdout-path = "serial0:115200n8";
-+/*				stdout-path = "serial2:115200n8"; */
-+				bootargs = "mem=64M cma=4M root=/dev/mmcblk0p2 init=/sbin/init console=ttyS0,115200 earlyprintk=sunxi-uart,0x02500000 rootwait clk_ignore_unused";
++/*				stdout-path = "serial0:115200n8"; */
++				stdout-path = "serial2:115200n8";
++				bootargs = "mem=64M cma=4M root=/dev/mmcblk0p2 init=/sbin/init console=ttyS2,115200 earlyprintk=sunxi-uart,0x02500800 rootwait clk_ignore_unused";
 +/*				bootargs = "mem=64M root=/dev/mmcblk0p2 init=/sbin/init console=ttyS2,115200 earlyprintk=sunxi-uart,0x02500800 rootwait"; */
 +/*				bootargs = "mem=64M cma=2M ubi.mtd=3 rootfstype=ubifs root=ubi0:rootfs rw rootwait console=ttyS0,115200"; */
 +/*				bootargs = "mem=64M cma=2M ubi.mtd=3 rootfstype=ubifs root=ubi0:rootfs rw rootwait console=ttyS2,115200"; */
@@ -177,7 +177,7 @@ index 000000000000..672e428aac3d
 +
 +&mmc0 {
 +	bus-width = <4>;
-+/*	cd-gpios = <&pio 5 6 (GPIO_ACTIVE_HIGH)>; */
++   broken-cd;
 +	disable-wp;
 +	vmmc-supply = <&reg_vcc_3v3>;
 +	vqmmc-supply = <&reg_vcc_3v3>;

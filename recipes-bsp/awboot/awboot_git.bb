@@ -8,7 +8,7 @@ require awboot-common.inc
 inherit deploy
 
 SRC_URI += " \
-    file://v851s-uart0.patch \
+    file://v851s-uart0-cpu-freq.patch \
 "
 
 AWBOOT_BINARY = "awboot-boot-sd.bin"
