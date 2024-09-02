@@ -3,7 +3,7 @@
 #!/bin/sh
 
 SDCARD_PART_DEV="mmcblk0"
-EMMC_PART_DEV="mmcblk0"
+EMMC_PART_DEV="mmcblk1"
 PART_NUM=2
 
 echo "Partition name is : $SDCARD_PART_DEV"
@@ -35,7 +35,8 @@ echo "Probing the partition table... "
 partprobe
 
 echo "Resizing the partition... "
-resize2fs -f /dev/${SDCARD_PART_DEV}${PART_NUM}
+# resize2fs -f /dev/${SDCARD_PART_DEV}${PART_NUM}
+resize2fs -f /dev/${SDCARD_PART_DEV}p2
 
 echo "Partition name is : $EMMC_PART_DEV"
 # Get the starting offset of the root partition
@@ -67,6 +68,7 @@ partprobe
 
 echo "Resizing the partition... "
 resize2fs -f /dev/${EMMC_PART_DEV}${PART_NUM}
+resize2fs -f /dev/${EMMC_PART_DEV}p2
 
 update-rc.d -f resize-rootfs remove
 exit 0
