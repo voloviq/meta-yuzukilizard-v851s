@@ -813,7 +813,7 @@ index 000000000000..44d8965bc3e5
 +		};
 +
 +		usbphy: phy@4100400 {
-+			compatible = "allwinner,sun8i-v851s-usb-phy";
++			compatible = "allwinner,sun8i-v3s-usb-phy";
 +			reg = <0x4100400 0x100>,
 +				  <0x4101800 0x100>;
 +			reg-names = "phy_ctrl",

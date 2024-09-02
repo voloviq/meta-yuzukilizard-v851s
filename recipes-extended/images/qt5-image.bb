@@ -86,6 +86,10 @@ UTILITIES_INSTALL = " \
     libgpiod-dev \
     libxcb \
     psplash \
+    usbutils \
+    libusbgx \
+    libusbgx-config \
+    libxcb \
     nano \
 "
 

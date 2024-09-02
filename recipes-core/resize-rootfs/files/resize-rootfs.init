@@ -3,7 +3,7 @@
 #!/bin/sh
 
 SDCARD_PART_DEV="mmcblk0"
-EMMC_PART_DEV="mmcblk1"
+EMMC_PART_DEV="mmcblk0"
 PART_NUM=2
 
 echo "Partition name is : $SDCARD_PART_DEV"
