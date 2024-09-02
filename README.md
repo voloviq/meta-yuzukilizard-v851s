@@ -12,15 +12,21 @@ Assumed that Linux Ubuntu is installed
 
 ## List of tested elements
 
-Nothing were tested due to Kernel not start!
+System start correctly but only on ttyS2, ttyS0 still have some problem. <br>
+The USB ETH works correctly, can login on ssh 192.168.10.1 -l root. <br>
+Detected some problem with reboot, work in progress to resolve this issue. <br>
+The LED cpu trigger works correctly. <br>
 
 ## List of not tested elements
 
 Lcd <br>
 Touchscreen <br>
 Backlight for Lcd <br>
-Leds  <br>
 Risc uC <br>
+Audio <br>
+Wifi <br>
+SPI Flash <br>
+Can't test Bluetooth now due to UART2 taken for console. <br>
 
 ## How to build an images
 
