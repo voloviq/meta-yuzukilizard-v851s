@@ -220,6 +220,7 @@ index 000000000000..672e428aac3d
 +&usbphy {
 +	usb0_vbus-supply = <&reg_usbvbus>;
 +	usb1_vbus-supply = <&reg_usbvbus>;
++   usb0_id_det-gpio = <&pio 4 9 GPIO_ACTIVE_LOW>;
 +	status = "okay";
 +};
 +
