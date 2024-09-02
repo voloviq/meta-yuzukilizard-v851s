@@ -88,7 +88,6 @@ UTILITIES_INSTALL = " \
     psplash \
     usbutils \
     libusbgx \
-    libusbgx-config \
     libxcb \
     nano \
 "

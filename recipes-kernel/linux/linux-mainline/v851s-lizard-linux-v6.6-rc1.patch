@@ -210,17 +210,16 @@ index 000000000000..672e428aac3d
 +};
 +
 +&ehci0 {
-+	status = "okay";
++	status = "disabled";
 +};
 +
 +&ohci0 {
-+	status = "okay";
++	status = "disabled";
 +};
 +
 +&usbphy {
 +	usb0_vbus-supply = <&reg_usbvbus>;
-+	usb1_vbus-supply = <&reg_usbvbus>;
-+   usb0_id_det-gpio = <&pio 4 9 GPIO_ACTIVE_LOW>;
++	usb0_id_det-gpio = <&pio 4 9 GPIO_ACTIVE_HIGH>;
 +	status = "okay";
 +};
 +
@@ -239,7 +238,7 @@ new file mode 100644
 index 000000000000..44d8965bc3e5
 --- /dev/null
 +++ b/arch/arm/boot/dts/allwinner/sun8i-v851s.dtsi
-@@ -0,0 +1,695 @@
+@@ -0,0 +1,696 @@
 +// SPDX-License-Identifier: (GPL-2.0+ or MIT)
 +// Copyright (C) 2021-2022 Samuel Holland <samuel@sholland.org>
 +
@@ -271,9 +270,10 @@ index 000000000000..44d8965bc3e5
 +
 +			cpu0: cpu@0 {
 +				device_type = "cpu";
-+				compatible = "arm,cortex-a7";
++				compatible = "arm,cortex-a7","arm,armv7";
 +				reg = <0>;
 +				clocks = <&ccu CLK_CPU>;
++				clock-frequency = <900000000>;
 +				clock-names = "cpu";
 +			};
 +	};
