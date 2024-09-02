@@ -116,4 +116,4 @@ Can't test Bluetooth now due to UART2 taken for console. <br>
     ***dd if=/home/root/awboot-boot-sd.bin of=/dev/sdd bs=1024 seek=8*** <br>
 
 **Note:** <br>
-  Awboot taken from git@github.com:szemzoa/awboot.git. Many thanks for the Author for help. <br>
+  Awboot taken from git@github.com:szemzoa/awboot.git. Many thanks to the Author for help. <br>
