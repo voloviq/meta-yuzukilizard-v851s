@@ -32,7 +32,7 @@ Bluetooth <br>
 
 1. First make sure to following packages are installed in system
 
-    ***sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 python3-subunit zstd liblz4-tool file locales libacl1***
+    ***sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 python3-subunit zstd file locales libacl1***
     
     on Ubuntu 24.04 also issue
     ***sudo locale-gen "en_US.UTF-8"***
@@ -50,7 +50,7 @@ Bluetooth <br>
   ***git clone git://git.yoctoproject.org/meta-arm -b kirkstone*** <br>
 	***git clone git://git.openembedded.org/meta-openembedded --depth 1 -b kirkstone*** <br>
 	***git clone https://github.com/meta-qt5/meta-qt5.git --depth 1 -b kirkstone*** <br>
-	***git clone git@github.com:voloviq/meta-yuzukilizard-v851s.git -b kirkstone*** <br>
+	***git clone https://github.com/voloviq/meta-yuzukilizard-v851s.git -b kirkstone*** <br>
 
 3. Select directory to build Linux
 
