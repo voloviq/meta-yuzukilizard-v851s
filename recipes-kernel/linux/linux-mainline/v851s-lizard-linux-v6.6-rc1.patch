@@ -15,7 +15,7 @@ new file mode 100644
 index 000000000000..672e428aac3d
 --- /dev/null
 +++ b/arch/arm/boot/dts/allwinner/sun8i-v851s-lizard.dts
-@@ -0,0 +1,217 @@
+@@ -0,0 +1,221 @@
 +// SPDX-License-Identifier: (GPL-2.0+ or MIT)
 +// Copyright (C) 2022 Samuel Holland <samuel@sholland.org>
 +
@@ -233,12 +233,16 @@ index 000000000000..672e428aac3d
 +			reg = <0>;
 +		};
 +};
++
++&wdt {
++	status = "okay";
++};
 diff --git a/arch/arm/boot/dts/allwinner/sun8i-v851s.dtsi b/arch/arm/boot/dts/allwinner/sun8i-v851s.dtsi
 new file mode 100644
 index 000000000000..44d8965bc3e5
 --- /dev/null
 +++ b/arch/arm/boot/dts/allwinner/sun8i-v851s.dtsi
-@@ -0,0 +1,696 @@
+@@ -0,0 +1,705 @@
 +// SPDX-License-Identifier: (GPL-2.0+ or MIT)
 +// Copyright (C) 2021-2022 Samuel Holland <samuel@sholland.org>
 +
@@ -447,7 +451,6 @@ index 000000000000..44d8965bc3e5
 +			#reset-cells = <1>;
 +		};
 +
-+
 +		timer: timer@2050000 {
 +			compatible = "allwinner,sun20i-d1-timer",
 +						 "allwinner,sun8i-a23-timer";
@@ -455,6 +458,16 @@ index 000000000000..44d8965bc3e5
 +			interrupts = <GIC_SPI 59 IRQ_TYPE_LEVEL_HIGH>,
 +						 <GIC_SPI 60 IRQ_TYPE_LEVEL_HIGH>;
 +			clocks = <&osc24M>;
++		};
++
++		wdt: watchdog@20500a0 {
++			compatible = "allwinner,sun20i-d1-wdt-reset",
++				     "allwinner,sun20i-d1-wdt";
++			reg = <0x20500a0 0x20>;
++			interrupts = <GIC_SPI 63 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&osc24M>, <&rtc CLK_OSC32K>;
++			clock-names = "hosc", "losc";
++			status = "reserved";
 +		};
 +
 +		uart0: serial@2500000 {
