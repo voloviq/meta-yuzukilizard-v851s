@@ -16,6 +16,7 @@ System start correctly on ttyS0 <br>
 The USB ETH works correctly, can login on ssh 192.168.10.1 -l root <br>
 The LED cpu trigger works correctly <br>
 Resize of mmcblk0p2 working correctly <br>
+SPI Flash driver installed and is visible <br>
 
 ## List of not tested elements
 
