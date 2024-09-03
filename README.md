@@ -115,6 +115,8 @@ Bluetooth <br>
     ***scp cd /home/root*** <br>
     ***dd if=awboot-boot-sd.bin of=/dev/mmcblk0 bs=1024 seek=8*** <br>
 
+    or from HOST - of=/dev/sdd can be different (be aware when change this name, can destroy Your local file structures !!!)
+
     ***dd if=/home/root/awboot-boot-sd.bin of=/dev/sdd bs=1024 seek=8*** <br>
 
 **Note:** <br>
