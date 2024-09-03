@@ -78,7 +78,7 @@ index 8658d06..2859eb3 100644
  /* boot from MMC/SD */
  #define CONFIG_CMD_LINE_ARGS \
 -	"mem=64M cma=4M root=/dev/mmcblk0p1 init=/sbin/init console=ttyS2,115200 console=/dev/tty0 rootwait"
-+	"mem=64M cma=4M root=/dev/mmcblk0p2 init=/sbin/init console=ttyS2,115200 earlyprintk=sunxi-uart,0x02500800 rootwait clk_ignore_unused"
++	"mem=64M cma=8M root=/dev/mmcblk0p2 init=/sbin/init console=ttyS0,115200 rootwait clk_ignore_unused"
  
  /* boot from spi nand UBIFS */
  //#define CONFIG_CMD_LINE_ARGS "mem=64M cma=8M init=/sbin/init console=ttyS2,115200 rootfstype=ubifs ubi.mtd=3

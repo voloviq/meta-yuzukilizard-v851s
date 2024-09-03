@@ -12,10 +12,11 @@ Assumed that Linux Ubuntu is installed
 
 ## List of tested elements
 
-System start correctly but only on ttyS2, ttyS0 still have some problem. <br>
-The USB ETH works correctly, can login on ssh 192.168.10.1 -l root. <br>
-Detected some problem with reboot, work in progress to resolve this issue. <br>
-The LED cpu trigger works correctly. <br>
+System start correctly on ttyS0 <br>
+The USB ETH works correctly, can login on ssh 192.168.10.1 -l root <br>
+Detected some problem with reboot, work in progress to resolve this issue <br>
+The LED cpu trigger works correctly <br>
+Resize of mmcblk0p2 working correctly <br>
 
 ## List of not tested elements
 
@@ -25,8 +26,8 @@ Backlight for Lcd <br>
 Risc uC <br>
 Audio <br>
 Wifi <br>
-SPI Flash <br>
-Can't test Bluetooth now due to UART2 taken for console. <br>
+SPI Flash, no system image prepared for it <br>
+Bluetooth <br>
 
 ## How to build an images
 
